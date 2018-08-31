@@ -3,27 +3,22 @@
     class Arrays{
 
 
+    public $lenght = 20;
     public $orgArr;
-    public $sortArr;
 
 
     public function __construct(){
-
-       $this->orgArr = array_fill(1,20,null);
+        //make array with fixed size
+        $this->orgArr = new SplFixedArray($this->lenght);
     }
 
     public function insertToArray($index , $value){
-
-        if($index < 0 or $index >20){
-            retutn -1;
-        }else{
             $this->orgArr[$index] = $value;
-            echo "Your Number is inserted!" . "<br>";
-        }
+    
     }
 
     public function choiseFromArray($ind){
-        if ($ind < 0 or $ind > 20) {
+        if ($ind < 0 or $ind > $this->lenght) {
             return -1;
         } else {
             return "Number is : " . $this->orgArr[$ind];
@@ -31,7 +26,7 @@
     }
 
     public function sort(){
-        $this->sortArr = $this->orgArr;
+        $this->sortArr = (array)$this->orgArr;
         sort($this->sortArr);
         return $this->sortArr;
 
