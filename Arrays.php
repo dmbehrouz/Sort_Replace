@@ -3,12 +3,13 @@
     class Arrays{
 
 
-    public $arr;
+    public $orgArr;
+    public $sortArr;
 
 
     public function __construct(){
 
-       $this->arr = array_fill(1,20,null);
+       $this->orgArr = array_fill(1,20,null);
     }
 
     public function insertToArray($index , $value){
@@ -16,7 +17,7 @@
         if($index < 0 or $index >20){
             retutn -1;
         }else{
-            $this->arr[$index] = $value;
+            $this->orgArr[$index] = $value;
             echo "Your Number is inserted!" . "<br>";
         }
     }
@@ -25,8 +26,15 @@
         if ($ind < 0 or $ind > 20) {
             return -1;
         } else {
-            return "Number is : " . $this->arr[$ind];
+            return "Number is : " . $this->orgArr[$ind];
         }
+    }
+
+    public function sort(){
+        $this->sortArr = $this->orgArr;
+        sort($this->sortArr);
+        return $this->sortArr;
+
     }
 
 
