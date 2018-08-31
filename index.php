@@ -11,8 +11,10 @@
     
     echo $sore->choiseFromArray(1) . "<br>";
 
-    echo "<pre>";
-    var_dump($sore->sort());
+    for($i=0 ; $i< count($sore->sort()) ; $i++){
+
+        echo $sore->sort()[$i] . "_";
+    }
 
 
 
