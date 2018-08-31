@@ -17,8 +17,15 @@
             retutn -1;
         }else{
             $this->arr[$index] = $value;
-            var_dump(($this->arr));
-            echo "Your Number is inserted!";
+            echo "Your Number is inserted!" . "<br>";
+        }
+    }
+
+    public function choiseFromArray($ind){
+        if ($ind < 0 or $ind > 20) {
+            return -1;
+        } else {
+            return "Number is : " . $this->arr[$ind];
         }
     }
 
